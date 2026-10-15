@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus Hospital | Appointment Portal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f7fb;
+            color: #243447;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #087f8c;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 6px;
+        }
+
+        nav {
+            background: #075b65;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 16px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 0 18px;
+        }
+
+        .announcement {
+            background: #fff3cd;
+            border-left: 5px solid #f0ad4e;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: #087f8c;
+            margin: 25px 0 15px;
+        }
+
+        .hospital-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            border-top: 4px solid #087f8c;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .doctor-icon {
+            font-size: 42px;
+        }
+
+        .doctor-card h3 {
+            color: #075b65;
+            margin: 8px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0f5f4;
+            color: #075b65;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 7px 0;
+        }
+
+        .available {
+            color: #168344;
+            font-weight: bold;
+        }
+
+        .slots {
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 7px;
+            margin-top: 12px;
+        }
+
+        .slots button {
+            background: #087f8c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .slots button:hover {
+            background: #075b65;
+        }
+
+        .booking {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .booking label {
+            display: block;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .booking input,
+        .booking select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 5px;
+            border: 1px solid #ccd5df;
+            border-radius: 6px;
+        }
+
+        .submit-btn {
+            margin-top: 18px;
+            background: #087f8c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: #168344;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 35px;
+            background: #075b65;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏥 CarePlus Hospital</h1>
+    <p>Your Health, Our Priority</p>
+    <p>Online Hospital Appointment Portal</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#doctors">Our Doctors</a>
+    <a href="#appointments">Book Appointment</a>
+    <a href="#announcements">Announcements</a>
+</nav>
+
+<div class="container" id="home">
+
+    <section class="announcement" id="announcements">
+        <h3>📢 Hospital Announcement</h3>
+        <p>Welcome to CarePlus Hospital! Online appointment scheduling
+        is available for all listed specializations.</p>
+        <p>Please arrive 15 minutes before your scheduled consultation.</p>
+    </section>
+
+    <h2>🏥 Hospital Information</h2>
+    <section class="hospital-info">
+        <p><strong>Hospital:</strong> CarePlus Multispeciality Hospital</p>
+        <p><strong>Location:</strong> Vellore, Tamil Nadu</p>
+        <p><strong>Consultation Hours:</strong> Monday - Saturday,
+        9:00 AM - 5:00 PM</p>
+        <p><strong>Contact:</strong> 0416-222-1000</p>
+        <p><strong>Appointment Status:</strong>
+        <span class="available">Online Booking Open</span></p>
+    </section>
+
+    <h2 id="doctors">👩‍⚕️ Our Doctors & Available Slots</h2>
+
+    <section class="doctor-grid">
+
+        <article class="doctor-card">
+            <div class="doctor-icon">👨‍⚕️</div>
+            <h3>Dr. Arun Kumar</h3>
+            <span class="tag">Cardiology</span>
+            <p><strong>Experience:</strong> 12 years</p>
+            <p><strong>Consultation:</strong> 9:00 AM - 12:00 PM</p>
+            <p class="available">● Available</p>
+            <div class="slots">
+                <strong>Available Slots</strong><br>
+                <button type="button" onclick="chooseDoctor('Dr. Arun Kumar','09:00 AM')">9:00 AM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Arun Kumar','10:00 AM')">10:00 AM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Arun Kumar','11:00 AM')">11:00 AM</button>
+            </div>
+        </article>
+
+        <article class="doctor-card">
+            <div class="doctor-icon">👩‍⚕️</div>
+            <h3>Dr. Priya Sharma</h3>
+            <span class="tag">Dermatology</span>
+            <p><strong>Experience:</strong> 8 years</p>
+            <p><strong>Consultation:</strong> 10:00 AM - 1:00 PM</p>
+            <p class="available">● Available</p>
+            <div class="slots">
+                <strong>Available Slots</strong><br>
+                <button type="button" onclick="chooseDoctor('Dr. Priya Sharma','10:00 AM')">10:00 AM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Priya Sharma','11:00 AM')">11:00 AM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Priya Sharma','12:00 PM')">12:00 PM</button>
+            </div>
+        </article>
+
+        <article class="doctor-card">
+            <div class="doctor-icon">👨‍⚕️</div>
+            <h3>Dr. Karthik Raj</h3>
+            <span class="tag">Orthopedics</span>
+            <p><strong>Experience:</strong> 10 years</p>
+            <p><strong>Consultation:</strong> 2:00 PM - 5:00 PM</p>
+            <p class="available">● Available</p>
+            <div class="slots">
+                <strong>Available Slots</strong><br>
+                <button type="button" onclick="chooseDoctor('Dr. Karthik Raj','02:00 PM')">2:00 PM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Karthik Raj','03:00 PM')">3:00 PM</button>
+                <button type="button" onclick="chooseDoctor('Dr. Karthik Raj','04:00 PM')">4:00 PM</button>
+            </div>
+        </article>
+
+    </section>
+
+    <h2 id="appointments">📅 Book an Appointment</h2>
+
+    <section class="booking">
+        <form onsubmit="bookAppointment(event)">
+            <label for="patient">Patient Name</label>
+            <input type="text" id="patient" required placeholder="Enter your name">
+
+            <label for="doctor">Select Doctor</label>
+            <select id="doctor" required>
+                <option value="">Choose a doctor</option>
+                <option>Dr. Arun Kumar</option>
+                <option>Dr. Priya Sharma</option>
+                <option>Dr. Karthik Raj</option>
+            </select>
+
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Appointment Time</label>
+            <select id="time" required>
+                <option value="">Choose a time slot</option>
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+            </select>
+
+            <button class="submit-btn" type="submit">Request Appointment</button>
+            <p id="message"></p>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 CarePlus Hospital | Online Appointment Portal</p>
+    <p>Designed for DevOps Assessment - A9_Q3</p>
+</footer>
+
+<script>
+    function chooseDoctor(doctorName, time) {
+        document.getElementById('doctor').value = doctorName;
+        document.getElementById('time').value = time;
+        document.getElementById('appointments').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    function bookAppointment(event) {
+        event.preventDefault();
+
+        const patient = document.getElementById('patient').value;
+        const doctor = document.getElementById('doctor').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        document.getElementById('message').textContent =
+            'Thank you, ' + patient + '! Your appointment request with ' +
+            doctor + ' for ' + date + ' at ' + time +
+            ' has been recorded in this demo.';
+    }
+</script>
+
+</body>
+</html>
